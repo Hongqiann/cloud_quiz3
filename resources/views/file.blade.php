@@ -17,6 +17,7 @@
                     <th>Lastname</th>
                     <th>Medium</th>
                     <th>Path</th>
+                    <th>Image</th>
                     <th>Download</th>
                     <!-- Add more columns as needed -->
                 </tr>
@@ -28,6 +29,7 @@
                         <td>{{ $item["lastname"] }}</td>
                         <td>{{ $item["medium"] }}</td>
                         <td>{{ $item["path"] }}</td>
+                        <td><img src="{{ $item["path"] }}" /></td>
                         <td><a href="download/{{ $item["path"] }}">Here</a></td>
                         <!-- Add more cells based on your data structure -->
                     </tr>
