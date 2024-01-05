@@ -27,6 +27,14 @@ Route::get('/files', function () {
     $data->map(function ($item) {
         if ($item->medium == "space") {
             $item->path = "https://inclasscloudquiz3.sgp1.digitaloceanspaces.com/" . $item->path;
+        } else {
+
+            $path = "uploads/zM7n4I5ifwD2KOSK0kPq6J6bX0fqsZoDeUU7Brtj.jpg";
+
+// Remove "uploads/" from the path
+            $result = str_replace("uploads/", "", $path);
+
+            $item->path = $result;
         }
     });
 

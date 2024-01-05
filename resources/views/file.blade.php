@@ -29,8 +29,17 @@
                         <td>{{ $item["lastname"] }}</td>
                         <td>{{ $item["medium"] }}</td>
                         <td>{{ $item["path"] }}</td>
-                        <td><img src="{{ $item["path"] }}" /></td>
-                        
+
+
+
+                            @if($item["path"] == "space")
+                                <!-- Content to display when the condition is true -->
+                                <td><img src="{{ $item["path"] }}" /></td>
+                            @else
+                                <!-- Content to display when the condition is false -->
+                                <td><img src="download/{{ $item["path"] }}" /></td>
+                            @endif
+
                         <td><a href="download/{{ $item["path"] }}">Here</a></td>
                         <!-- Add more cells based on your data structure -->
                     </tr>
