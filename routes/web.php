@@ -35,7 +35,7 @@ Route::get('/files', function () {
 
 Route::get('/download/{path}', function ($path) {
     $path = "/mnt/volume_sgp1_02/uploads/" . $path;
-
+    dd($path);
     if (!Storage::disk('block_storage')->exists($path)) {
         abort(404);
     }
