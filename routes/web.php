@@ -34,9 +34,15 @@ Route::get('/files', function () {
 });
 
 Route::get('/download/{path}', function ($path) {
-    $path = "/mnt/volume_sgp1_02/" . $path;
-    // dd($path);
-return response(Storage::disk('block_storage')->get($path))
-    ->header('Content-Type', 'image/')
-    ->header('Content-Disposition', 'attachment; filename="' . basename($path) . '"');
+    $path = "/mnt/volume_sgp1_02/uploads/" . $path;
+
+    if (!Storage::disk('block_storage')->exists($path)) {
+        abort(404);
+    }
+
+    $file = Storage::disk('block_storage')->get($path);
+    $mimeType = Storage::disk('block_storage')->mimeType($path);
+
+    return response($file, 200)->header('Content-Type', $mimeType)
+        ->header('Content-Disposition', 'inline; filename="' . basename($path) . '"');
 });
