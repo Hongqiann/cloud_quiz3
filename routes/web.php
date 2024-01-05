@@ -31,7 +31,6 @@ Route::get('/files', function () {
 
             $path = "uploads/zM7n4I5ifwD2KOSK0kPq6J6bX0fqsZoDeUU7Brtj.jpg";
 
-// Remove "uploads/" from the path
             $result = str_replace("uploads/", "", $path);
 
             $item->path = $result;

@@ -32,7 +32,7 @@
 
 
 
-                            @if($item["path"] == "space")
+                            @if($item["medium"] == "space")
                                 <!-- Content to display when the condition is true -->
                                 <td><img src="{{ $item["path"] }}" /></td>
                             @else
