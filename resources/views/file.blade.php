@@ -30,6 +30,7 @@
                         <td>{{ $item["medium"] }}</td>
                         <td>{{ $item["path"] }}</td>
                         <td><img src="{{ $item["path"] }}" /></td>
+                        
                         <td><a href="download/{{ $item["path"] }}">Here</a></td>
                         <!-- Add more cells based on your data structure -->
                     </tr>

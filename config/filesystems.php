@@ -68,7 +68,7 @@ return [
 
         'block_storage' => [
             'driver' => 'local',
-            'root' => '/mnt/volume_sgp1_01',
+            'root' => '/mnt/volume_sgp1_02',
         ],
         
     ],
