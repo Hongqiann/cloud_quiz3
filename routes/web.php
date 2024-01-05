@@ -29,9 +29,8 @@ Route::get('/files', function () {
             $item->path = "https://inclasscloudquiz3.sgp1.digitaloceanspaces.com/" . $item->path;
         } else {
 
-            $path = "uploads/zM7n4I5ifwD2KOSK0kPq6J6bX0fqsZoDeUU7Brtj.jpg";
 
-            $result = str_replace("uploads/", "", $path);
+            $result = str_replace("uploads/", "", $item->path);
 
             $item->path = $result;
         }
