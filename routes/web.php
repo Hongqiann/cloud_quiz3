@@ -2,6 +2,7 @@
 
 use App\Models\Entry;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\FileController;
 
 /*
@@ -28,4 +29,11 @@ Route::get('/files', function () {
     });
 
     return view('file', ["data" => $data->toArray()]);
+});
+
+Route::get('/download/{path}', function ($path) {
+    $path = "/mnt/volume_sgp1_01/" . $path;
+return response(Storage::disk('block_storage')->get($path))
+    ->header('Content-Type', 'your/mime-type')
+    ->header('Content-Disposition', 'attachment; filename="' . basename($path) . '"');
 });
