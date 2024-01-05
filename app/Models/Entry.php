@@ -13,5 +13,6 @@ class Entry extends Model
         'firstname',
         'lastname',
         'path',
+        'medium',
     ];
 }
