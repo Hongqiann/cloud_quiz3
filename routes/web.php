@@ -25,7 +25,7 @@ Route::post('/upload', [FileController::class, 'upload']);
 Route::get('/files', function () {
     $data = Entry::all();
     $data->map(function ($item) {
-        $item->path = "https://paragoncloudquiz3.sgp1.cdn.digitaloceanspaces.com/" . $item->path;
+        $item->path = "https://inclasscloudquiz3.sgp1.digitaloceanspaces.com/" . $item->path;
     });
 
     return view('file', ["data" => $data->toArray()]);
