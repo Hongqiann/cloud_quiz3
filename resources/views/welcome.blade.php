@@ -18,10 +18,10 @@
 
         <br>
 
-        <label>Gender:</label>
-        <label for="">
+        <label>Medium:</label>
+        {{-- <label for="">
             <input type="radio" id="male" name="to" value="volume" required> Volume
-        </label>
+        </label> --}}
         <label for="">
             <input type="radio" id="female" name="to" value="space" required> Space
         </label>
