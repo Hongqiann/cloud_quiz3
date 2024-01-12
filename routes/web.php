@@ -26,7 +26,7 @@ Route::get('/files', function () {
     $data = Entry::all();
     $data->map(function ($item) {
         if ($item->medium == "space") {
-            $item->path = "https://inclasscloudquiz3.sgp1.digitaloceanspaces.com/" . $item->path;
+            $item->path = env("DO_SPACES_ORIGIN_ENDPOINT") . '/' . $item->path;
         } else {
 
 

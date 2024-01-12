@@ -18,7 +18,6 @@
                     <th>Medium</th>
                     <th>Path</th>
                     <th>Image</th>
-                    <th>Download</th>
                     <!-- Add more columns as needed -->
                 </tr>
             </thead>
@@ -34,13 +33,11 @@
 
                             @if($item["medium"] == "space")
                                 <!-- Content to display when the condition is true -->
-                                <td><img src="{{ $item["path"] }}" /></td>
+                                <td><img src="{{ $item["path"] }}" style="width: 100%;height: 100%;object-fit: contain;" /></td>
                             @else
                                 <!-- Content to display when the condition is false -->
                                 <td><img src="download/{{ $item["path"] }}" /></td>
                             @endif
-
-                        <td><a href="download/{{ $item["path"] }}">Here</a></td>
                         <!-- Add more cells based on your data structure -->
                     </tr>
                 @endforeach
